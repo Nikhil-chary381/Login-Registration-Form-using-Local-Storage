@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Step Form</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container active" id="login-page">
+    <h3>Login</h3>
+    <form id="login-form">
+      <input id="login-email" type="email" placeholder="Enter your email" />
+      <input id="login-password" type="password" placeholder="Enter your password" />
+      <input type="checkbox" id="login-showpass" onclick="show('login-password')" />
+      <label for="login-showpass">Show password</label>
+      <button type="button" onclick="login()">Login</button>
+    </form>
+    <p>Don't have an account? <a href="#" onclick="changepages('registration-page')">Sign Up</a></p>
+  </div>
+
+  <div class="container" id="registration-page">
+    <h3>Account Registration</h3>
+    <form id="register-form">
+      <input id="name" type="text" placeholder="Enter full name" />
+      <input id="register-email" type="email" placeholder="Enter your email" onchange="check('register-email')" />
+      <input id="register-password" type="password" placeholder="Enter your password" />
+      <input type="checkbox" id="reg-showpass" onclick="show('register-password')" />
+      <label for="reg-showpass">Show password</label>
+      <input id="confirm-password" type="password" placeholder="Confirm your password" />
+      <input type="checkbox" id="reg-showconfirmpass" onclick="show('confirm-password')" />
+      <label for="reg-showconfirmpass">Show password</label>
+      <button type="button" onclick="register()">Register</button>
+    </form>
+    <p>Already have an account? <a href="#" onclick="changepages('login-page')">Login</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
